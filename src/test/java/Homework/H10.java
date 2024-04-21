@@ -13,7 +13,7 @@ public class H10 {
      * Using the https://petstore.swagger.io/ document,
      * write an automation test that finds the number of "pets" with the status "available"
      * and asserts that there are more than 100.
-     * */
+     */
 
     @Test
     public void test() {
@@ -30,7 +30,7 @@ public class H10 {
                 .assertThat()
                 .statusCode(200)
                 .contentType(ContentType.JSON)
-                .body("",hasSize(greaterThan(100)))
+                .body("", hasSize(greaterThan(100)))
         ;
 
     }
