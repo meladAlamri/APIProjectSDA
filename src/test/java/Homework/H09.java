@@ -23,14 +23,14 @@ public class H09 {
 
         //set the expected data
         Map<String, Object> expectedData = new HashMap<>();
-        expectedData.put( "code", 200);
-        expectedData.put( "type", "unknown");
-        expectedData.put( "message", "999");
+        expectedData.put("code", 200);
+        expectedData.put("type", "unknown");
+        expectedData.put("message", "999");
 
 
         //set the request and got the response
-        UserPetStorePojo  Data = new UserPetStorePojo(999,"Dany","Melad","Alamri"
-                ,"melad@gmail.com","12345","999999");
+        UserPetStorePojo Data = new UserPetStorePojo(999, "Dany", "Melad", "Alamri"
+                , "melad@gmail.com", "12345", "999999");
         System.out.println("expectedData = " + expectedData);
 
         Response response = given()
@@ -44,11 +44,10 @@ public class H09 {
                 .then()
                 .assertThat()
                 .statusCode(200)
-                .body("code", equalTo((int)expectedData.get("code"))
-                        , "type", equalTo((String)expectedData.get("type"))
-                        , "message", equalTo((String)expectedData.get("message"))
-                        );
-
+                .body("code", equalTo((int) expectedData.get("code"))
+                        , "type", equalTo((String) expectedData.get("type"))
+                        , "message", equalTo((String) expectedData.get("message"))
+                );
 
 
     }
