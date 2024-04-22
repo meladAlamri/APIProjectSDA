@@ -1,8 +1,12 @@
 package requests;
 
 import base_urls.JsonPlaceHolderBaseUrl;
+import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import pojos.JsonPlaceHolderPojo;
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 public class C18_PostRequestPojo extends JsonPlaceHolderBaseUrl {
 /*
@@ -27,15 +31,28 @@ public class C18_PostRequestPojo extends JsonPlaceHolderBaseUrl {
 */
 
     @Test
-    public void postRequestPojoTest(){
+    public void postRequestPojoTest() {
         //Set the url
-        spec.pathParams("first","todos");
+        spec.pathParams("first", "todos");
 
         //Set the expected data --> With Pojo Class
-        JsonPlaceHolderPojo expectedData = new JsonPlaceHolderPojo(55,"Tidy your room",false);
+        JsonPlaceHolderPojo expectedData = new JsonPlaceHolderPojo(55, "Tidy your room", false);
         System.out.println("expectedData = " + expectedData);
 
+        //send the request and get the response
+        Response response = given(spec)
+                .body(expectedData)
+                .post("{first}");
+        response.prettyPrint();
 
+        // do assertion
+        response
+                .then()
+                .statusCode(201)
+                .body("userId", equalTo(expectedData.getUserId()),
+                        "title", equalTo(expectedData.getTitle()),
+                        "completed", equalTo(expectedData.getCompleted()))
+        ;
 
 
     }
