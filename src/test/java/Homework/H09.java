@@ -31,7 +31,7 @@ public class H09 {
         //set the request and got the response
         UserPetStorePojo Data = new UserPetStorePojo(999, "Dany", "Melad", "Alamri"
                 , "melad@gmail.com", "12345", "999999");
-        System.out.println("expectedData = " + expectedData);
+        System.out.println("Data = " + Data);
 
         Response response = given()
                 .body(Data)

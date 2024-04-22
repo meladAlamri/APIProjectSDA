@@ -89,4 +89,18 @@ public class UserPetStorePojo {
     public void setUserStatus(String userStatus) {
         this.userStatus = userStatus;
     }
+
+    @Override
+    public String toString() {
+        return "UserPetStorePojo{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", phone='" + phone + '\'' +
+                ", userStatus='" + userStatus + '\'' +
+                '}';
+    }
 }
