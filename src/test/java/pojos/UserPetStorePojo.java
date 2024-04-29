@@ -9,7 +9,7 @@ public class UserPetStorePojo {
     private String email;
     private String password;
     private String phone;
-    private String userStatus;
+    private int userStatus;
 
     public UserPetStorePojo() {
 
@@ -23,7 +23,18 @@ public class UserPetStorePojo {
         this.email = email;
         this.password = password;
         this.phone = phone;
-        this.userStatus = "0";
+        this.userStatus = 0;
+    }
+
+    public UserPetStorePojo(int id, String username, String firstName, String lastName, String email, String password, String phone, int userStatus) {
+        this.id = id;
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.userStatus = userStatus;
     }
 
     public int getId() {
@@ -82,11 +93,11 @@ public class UserPetStorePojo {
         this.phone = phone;
     }
 
-    public String getUserStatus() {
+    public int getUserStatus() {
         return userStatus;
     }
 
-    public void setUserStatus(String userStatus) {
+    public void setUserStatus(int userStatus) {
         this.userStatus = userStatus;
     }
 
