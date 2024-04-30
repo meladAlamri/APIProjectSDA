@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/dinai/IdeaProjects/APIProject/src/test/java/Homework/H13">
+        <classes>
+            <class name="Homework.H13.H13_Post">
+                <methods>
+                    <include name="creatUserTest"/>
+                </methods>
+            </class>
+            <class name="Homework.H13.H13_Get">
+                <methods>
+                    <include name="readUserTest"/>
+                </methods>
+            </class>
+            <class name="Homework.H13.H13_Put">
+                <methods>
+                    <include name="updateUserTest"/>
+                </methods>
+            </class>
+            <class name="Homework.H13.H13_Delete">
+                <methods>
+                    <include name="deleteUserTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
