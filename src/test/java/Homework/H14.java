@@ -42,8 +42,8 @@ public class H14 {
                 .then()
                 .assertThat()
                 .statusCode(200)
-                .body("data",hasSize(24),
-                "data.employee_name",hasItems("Tiger Nixon","Garrett Winters")
+                .body("data", hasSize(24),
+                        "data.employee_name", hasItems("Tiger Nixon", "Garrett Winters")
                 );
 
 
@@ -51,15 +51,15 @@ public class H14 {
         System.out.println("age = " + age);
 
         int minAge = response.jsonPath().getInt("data.employee_age.min()");
-        String name = response.jsonPath().getList("data.findAll{it.employee_age =="+minAge+"}.employee_name").getFirst().toString();
+        String name = response.jsonPath().getList("data.findAll{it.employee_age ==" + minAge + "}.employee_name").getFirst().toString();
         System.out.println("name = " + name);
 
         int salary = response.jsonPath().getInt("data.employee_salary.sum()");
         System.out.println("salary = " + salary);
 
-        Assert.assertEquals(age,66);
+        Assert.assertEquals(age, 66);
         Assert.assertEquals(name, "Tatyana Fitzpatrick");
-        Assert.assertEquals(salary, 6644770 );
+        Assert.assertEquals(salary, 6644770);
 
 
     }
