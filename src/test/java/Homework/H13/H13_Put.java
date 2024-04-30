@@ -19,7 +19,7 @@ public class H13_Put extends setUp {
     public void updateUserTest() {
 
 
-        String strJson =
+        String strJson1 =
                 """
                         {
                           "id": 999,
@@ -34,15 +34,15 @@ public class H13_Put extends setUp {
 
 
         //set the request and got the response
-        Data = ObjectMapperUtils.convertJsonToPojo(strJson, UserPetStorePojo.class);
+        UserPetStorePojo  Data1 = ObjectMapperUtils.convertJsonToPojo(strJson1, UserPetStorePojo.class);
 
-        System.out.println("Data = " + Data);
+        System.out.println("Data = " + Data1);
 
         Response response = given()
                 .contentType(ContentType.JSON)
-                .body(Data)
+                .body(Data1)
                 //.sessionId(session)
-                .put(url + "/" + Data.getUsername());
+                .put(url + "/" + Data1.getUsername());
         response.prettyPrint();
 
         //do assertion
@@ -51,7 +51,7 @@ public class H13_Put extends setUp {
                 .assertThat()
                 .body("code", equalTo(response.getStatusCode())
                         , "type", equalTo(type)
-                        , "message", equalTo(Data.getId() + "")
+                        , "message", equalTo(Data1.getId() + "")
                 );
 
     }
