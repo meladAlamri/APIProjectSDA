@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="Homework/H15">
+        <classes>
+            <class name="Homework.H15.R01_CreateUser"/>
+            <class name="Homework.H15.R02_GetUserProfile"/>
+            <class name="Homework.H15.R03_UpdateUser"/>
+            <class name="Homework.H15.R04_DeleteUser"/>
+        </classes>
+    </test>
+</suite>
